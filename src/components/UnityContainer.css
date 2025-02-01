@@ -1,0 +1,14 @@
+.unity-container {
+    width: 960px;
+    height: 600px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .unity-container p {
+    font-size: 16px;
+    color: #666;
+  }

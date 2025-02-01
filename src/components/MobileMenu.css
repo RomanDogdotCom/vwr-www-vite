@@ -1,0 +1,50 @@
+/* Floating menu button at the top-left */
+.menu-button {
+    background-color: #1f2937; /* Dark gray */
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 50%;
+    
+    position: fixed;
+    top: 1rem;
+    right: 1rem; /* Floating in the top-left */
+    
+    z-index: 1000; /* Ensure it's always on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Menu - Ensure it stays inside the screen */
+.dropdown-menu-content {
+    background-color: rgb(88, 86, 86);
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+                0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+                
+    width: auto;
+    max-width: 12rem;
+
+    position: absolute;
+    top: 3rem; /* Opens below the button */
+    right: 0; /* Keep it inside the viewport */
+    transform: translateX(-25%); /* Shifts the menu left slightly */
+    z-index: 1000;
+}
+
+/* Menu Items */
+.dropdown-menu-item {
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.dropdown-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,11 @@
+.static-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fce4ec;
+    color: #880e4f;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
