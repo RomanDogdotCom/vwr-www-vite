@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
-function UnityContainer() {
+function UnityContainer({ onLoadingProgress }) {
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "build/www.loader.js", // Correct path
     dataUrl: "build/www.data",       // Correct path
@@ -13,6 +13,10 @@ function UnityContainer() {
   console.log(loadingProgression); 
   console.log(loadingPercentage); 
   console.log(isLoaded); 
+
+  useEffect(() => {
+    onLoadingProgress(loadingProgression); // Call the callback
+  }, [loadingProgression, onLoadingProgress]); // Add onLoadingProgress to the dependency array
 
 
   return <Fragment>
