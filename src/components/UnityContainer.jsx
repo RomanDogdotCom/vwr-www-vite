@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function UnityContainer() {
@@ -15,11 +15,10 @@ function UnityContainer() {
   console.log(isLoaded); 
 
 
-  return (
-   
-      <Unity className="unity" unityProvider={unityProvider} />
-  
-  );
+  return <Fragment>
+            <p>Loading Application... {Math.round(loadingProgression * 100)}%</p>
+            <Unity unityProvider={unityProvider} />
+        </Fragment>
 }
 
 export default UnityContainer;
