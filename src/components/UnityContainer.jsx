@@ -28,7 +28,8 @@ function UnityContainer({ onLoadingProgress }) {
 
 
   return <Fragment>
-            <Unity unityProvider={unityProvider} />
+            <Unity unityProvider={unityProvider} className="unity-container" />
+            
         </Fragment>
 }
 

@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import DesktopFooter from '../components/DesktopFooter';
 import MobileMenu from '../components/MobileMenu';
 import UnityContainer from '../components/UnityContainer';
-import './DynamicPage.css'; // Import CSS (use relative path)
-import './Gauge.css';       // Import CSS (use relative path)
+import './DynamicPage.css'; 
+import './Gauge.css';  
+import '../components/UnityContainer.css';    
 import jumperWebP from '../assets/images/jumper.webp';
 
 function DynamicPage() { // Changed to a regular function component
