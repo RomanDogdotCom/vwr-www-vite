@@ -14,12 +14,21 @@ function DynamicPage() { // Changed to a regular function component
   const [overlayVisible, setOverlayVisible] = useState(true);
 
   const [loadingProgression, setLoadingProgression] = useState(0); // State in DynamicPage
-
-  const handleLoadingProgress = (progress) => { // Callback function
+  const [rotationDegrees, setRotationDegrees] = useState(0);
+  
+  const handleLoadingProgress = (progress) => {
     setLoadingProgression(progress);
-  };
 
-  const rotationDegrees = loadingProgression * -364; // Calculate rotation
+    if (progress < 0.9) {
+      setRotationDegrees(progress * -364);
+    } else if (progress >= 0.9 && progress < 1) {
+      // Random jumpy rotation between -364 and -328
+      const randomRotation = -364 + Math.random() * 36; // Generates between -364 and -328
+      setRotationDegrees(randomRotation);
+    } else if (progress === 1) {
+      setRotationDegrees(-364); // Final position
+    }
+  };
 
   useEffect(() => {
     const img = new Image();
