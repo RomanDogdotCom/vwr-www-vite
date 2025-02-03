@@ -37,6 +37,7 @@ function DynamicPage() { // Changed to a regular function component
       <div className={`dynamic-content ${isMobile ? "full-height" : ""}`}>
       {loadingProgression < 1 && (
           <div className="loading-wrapper">
+            <div className="loading-background"></div>
               <img src={jumperWebP} alt="Jumper Animation" className="webp-overlay" />
               <div className={`gauge-wrapper ${isMobile ? 'mobile' : ''}`}>
                 <div className="gauge-container">
