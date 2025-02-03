@@ -20,7 +20,6 @@ function UnityContainer({ onLoadingProgress }) {
 
 
   return <Fragment>
-            <p>Loading Application... {Math.round(loadingProgression * 100)}%</p>
             <Unity unityProvider={unityProvider} />
         </Fragment>
 }
