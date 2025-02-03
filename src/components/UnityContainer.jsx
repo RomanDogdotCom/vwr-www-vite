@@ -1,6 +1,14 @@
 import React, { Fragment, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
+// Debug utility
+const debug = (...args) => {
+    if (import.meta.env.VITE_DEBUG === "true") {
+        console.log(...args);
+    }
+};
+
+
 function UnityContainer({ onLoadingProgress }) {
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "build/www.loader.js", // Correct path
@@ -10,9 +18,9 @@ function UnityContainer({ onLoadingProgress }) {
   });
 
   const loadingPercentage = Math.round(loadingProgression * 100);
-  console.log(loadingProgression); 
-  console.log(loadingPercentage); 
-  console.log(isLoaded); 
+  debug(loadingProgression); 
+  debug(loadingPercentage); 
+  debug(isLoaded); 
 
   useEffect(() => {
     onLoadingProgress(loadingProgression); // Call the callback

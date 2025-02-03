@@ -18,7 +18,7 @@ function DynamicPage() { // Changed to a regular function component
     setLoadingProgression(progress);
   };
 
-  const rotationDegrees = loadingProgression * 180; // Calculate rotation
+  const rotationDegrees = loadingProgression * -364; // Calculate rotation
 
   useEffect(() => {
     const img = new Image();
@@ -35,19 +35,17 @@ function DynamicPage() { // Changed to a regular function component
     <div className="dynamic-page">
       <div className={`fade-overlay ${overlayVisible ? '' : 'fade-out'}`}></div>
       <div className={`dynamic-content ${isMobile ? "full-height" : ""}`}>
-        <div className="loading-wrapper">
-            <div className="webp-container">
-              {isLoaded && (
-                <img src={jumperWebP} alt="Jumper Animation" className="webp-overlay" />
-              )}
-            </div>
-            <div className={`gauge-wrapper ${isMobile ? 'mobile' : ''}`}>
-              <div className="gauge-container">
-                <div className="gauge-body"></div>
-                <div className="gauge-needle-container" style={{ transform: `rotate(${rotationDegrees}deg)` }}></div>
+      {loadingProgression < 1 && (
+          <div className="loading-wrapper">
+              <img src={jumperWebP} alt="Jumper Animation" className="webp-overlay" />
+              <div className={`gauge-wrapper ${isMobile ? 'mobile' : ''}`}>
+                <div className="gauge-container">
+                  <div className="gauge-body"></div>
+                  <div className="gauge-needle-container" style={{ transform: `rotate(${rotationDegrees}deg)` }}></div>
+                </div>
               </div>
-            </div>
-        </div>
+          </div>
+      )}
         <UnityContainer onLoadingProgress={handleLoadingProgress}/>
 
         {isMobile && <MobileMenu />}

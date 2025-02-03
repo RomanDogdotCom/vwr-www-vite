@@ -66,22 +66,10 @@
   background-repeat: no-repeat;
 }
 
-.webp-container { /* New container for the webp image */
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  width: 100%; /* Or a specific width if needed */
-  height: 100%; /* Or a specific height if needed */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1; /* Ensure it's below the gauge */
-}
-
 .webp-overlay {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Or cover, depending on your needs */
+  object-fit: cover; 
 }
 
 .dynamic-footer {
