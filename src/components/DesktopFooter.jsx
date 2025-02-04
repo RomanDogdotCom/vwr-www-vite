@@ -1,4 +1,5 @@
 import "./DesktopFooter.css"; // Import the CSS file
+import vwrLogo from '../assets/images/vwr_logo.png';
 
 export default function DesktopFooter() {
   return (
@@ -12,7 +13,7 @@ export default function DesktopFooter() {
     
         <div className="column-center">
           <div className="center-contents">
-            <button>Button 2</button>
+          <img src={vwrLogo} alt="VWR Logo" />
           </div>
         </div>
     

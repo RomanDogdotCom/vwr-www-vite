@@ -25,10 +25,17 @@
   .left-contents,
   .center-contents,
   .right-contents {
-    padding: 5px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+  }
+
+  .center-contents img {  /* Target the image specifically */
+    max-width: 65%;  /* Image should not be wider than its container */
+    max-height: 65%; /* Image should not be taller than its container */
+    object-fit: contain; /* Maintain aspect ratio and fit within container */
   }
   
   button {
