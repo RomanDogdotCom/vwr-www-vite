@@ -1,11 +1,46 @@
 .desktop-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh; /* Adjust as needed */
+  z-index: 1000; /* Ensures it's on top */
+  }
+  
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    height: 10vh; /* Adjust as needed */
-    background-color: rgb(33, 53, 71);
-    text-align: center;
-    z-index: 1000; /* Ensures it's on top */
+  }
+  
+  .column-left,
+  .column-center,
+  .column-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left-contents,
+  .center-contents,
+  .right-contents {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
   }
   
